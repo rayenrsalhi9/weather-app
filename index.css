@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ffffff;
+    --secondary: #EBEBF5;
+    --glass-bg: rgba(255, 255, 255, 0.13);
+    --glass-border: rgba(255, 255, 255, 0.78);
+    --text-opacity: rgba(255, 255, 255, 0.78);
+    --border-opacity: rgba(255, 255, 255, 0.176);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+}
+
+body {
+    background: linear-gradient(135deg, #2E335A, #1C1B33);
+    color: var(--primary);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+/* card design */
+.weather-card {
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    width: 100%;
+    max-width: 400px;
+}
+
+.glassmorphism {
+    background: var(--glass-bg);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+}
+
+/* images size */
+.weather-description img {
+    width: clamp(80px, 15vw, 120px);
+    height: auto;
+}
+
+.general img {
+    width: clamp(30px, 8vw, 50px);
+    height: auto;
+}
+
+/* country name */
+.country-name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.country-name img {
+    width: clamp(20px, 4vw, 30px);
+    height: auto;
+}
+
+/* weather container */
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-opacity);
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-md);
+}
+
+.weather-container .temperature {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-container .temperature .temp-value {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    padding-top: .5em;
+}
+
+.weather-container .temperature span {
+    margin-top: auto;
+}
+
+.temperature, .weather-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.weather-container .temperature span,
+.weather-container .weather-description p {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: var(--text-opacity);
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.weather-container .weather-description p {
+    text-align: right;
+}
+
+/* general information section */
+.general {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    text-align: center;
+    border-bottom: 2px solid var(--border-opacity);
+}
+
+.general .title {
+    color: var(--text-opacity);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.general .sunset-sunrise-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    order: -1;
+}
+
+/* form design */
+form {
+    padding: 1em 0 0;
+    display: grid;
+    gap: .5em;
+}
+
+form input, form button {
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid var(--border-opacity);
+    background: none;
+    color: var(--secondary);
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+form input::placeholder {
+    color: var(--secondary);
+}
+
+form button {
+    transition: .6s ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--glass-bg);
+}
+
+/* error message design */
+.error {
+    text-align: center;
+    border-bottom: 2px solid var(--border-opacity);
+    padding-bottom: 1em;
+}
+
+.error img {
+    width: 100%;
+    max-width: 150px;
+}
+
+.error p {
+    text-transform: uppercase;
+}
