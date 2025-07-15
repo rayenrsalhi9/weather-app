@@ -41,12 +41,13 @@ export function fetchWeather(city) {
                     <div class="sunrise">
                         <img src="/images/daytime/sunrise.png" alt="sunrise">
                         <p class="title">Sunrise</p>
-                        <p>${formatTime(data.sys.sunrise)}</p>
+                        <p>${formatTimezone(data.timezone, data.sys.sunrise)}</p>
                     </div>
                     <div class="sunset">
                         <img src="/images/daytime/sunset.png" alt="sunset">
                         <p class="title">Sunset</p>
-                        <p>${formatTime(data.sys.sunset)}</p>
+                        <p>${formatTimezone(data.timezone, data.sys.sunset)}</p>
+
                     </div>
                 </div>
             </div>` : 
