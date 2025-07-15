@@ -67,6 +67,12 @@ body {
     height: auto;
 }
 
+/* current time */
+.current-time {
+    color: var(--glass-border);
+    margin-top: .5em;
+}
+
 /* weather container */
 .weather-container {
     display: flex;
